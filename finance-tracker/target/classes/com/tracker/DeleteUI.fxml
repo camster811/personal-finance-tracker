@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tracker.DeleteTransactionController">
+    <children>
+        <Label text="Delete Transaction" />
+        <HBox spacing="10">
+            <Label text="Transaction ID:" />
+            <TextField fx:id="idField" />
+        </HBox>
+        <Button text="Delete Transaction" onAction="#handleDeleteTransaction" />
+    </children>
+</VBox>

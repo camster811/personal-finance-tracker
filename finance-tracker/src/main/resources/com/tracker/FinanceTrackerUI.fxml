@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tracker.Controller">
+    <children>
+        <Label text="Personal Finance Manager" />
+        <HBox spacing="10">
+            <VBox spacing="12">
+                <Label text="Type (Income/Expense):" />
+                <Label text="Amount:" />
+                <Label text="Description:" />
+            </VBox>
+            <VBox spacing="5">
+                <TextField fx:id="typeField" />
+                <TextField fx:id="amountField" />
+                <TextField fx:id="descriptionField" />
+            </VBox>
+        </HBox>
+        <Button text="Add Transaction" onAction="#handleAddTransaction" />
+        <Button text="Edit Transaction" onAction="#openEditTransactionWindow" />
+        <Button text="Delete Transaction" onAction="#openDeleteTransactionWindow" />
+        <Button text="Summarize Transactions" onAction="#handleSummarizeTransactions" />
+        <TableView fx:id="transactionTable">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" />
+                <TableColumn fx:id="typeColumn" text="Type" />
+                <TableColumn fx:id="amountColumn" text="Amount" />
+                <TableColumn fx:id="descriptionColumn" text="Description" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tracker.EditTransactionController">
+    <children>
+        <Label text="Edit Transaction" />
+        <HBox spacing="10">
+            <Label text="Transaction ID:" />
+            <TextField fx:id="idField" />
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Type:" />
+            <TextField fx:id="typeField" />
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Amount:" />
+            <TextField fx:id="amountField" />
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Description:" />
+            <TextField fx:id="descriptionField" />
+        </HBox>
+        <Button text="Edit Transaction" onAction="#handleEditTransaction" />
+    </children>
+</VBox>
