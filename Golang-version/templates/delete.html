@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Transaction - Finance Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Delete Transaction</h1>
+        
+        <div class="form-container">
+            <form action="/delete" method="post">
+                <div class="form-group">
+                    <label for="id">Transaction ID:</label>
+                    <input type="number" id="id" name="id" required>
+                </div>
+                <button type="submit" class="delete-btn">Delete Transaction</button>
+            </form>
+        </div>
+        
+        <div class="actions">
+            <a href="/" class="button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Finance Manager</h1>
+        
+        <div class="form-container">
+            <h2>Add Transaction</h2>
+            <form action="/add" method="post">
+                <div class="form-group">
+                    <label for="type">Type:</label>
+                    <select id="type" name="type" required>
+                        <option value="Income">Income</option>
+                        <option value="Expense">Expense</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" name="amount" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description" required>
+                </div>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </div>
+        
+        <div class="actions">
+            <a href="/edit" class="button">Edit Transaction</a>
+            <a href="/delete" class="button">Delete Transaction</a>
+            <button id="summarize-btn">Summarize Transactions</button>
+        </div>
+        
+        <div id="summary" class="summary hidden">
+            <h2>Transaction Summary</h2>
+            <p>Total Income: <span id="income-total">0.00</span></p>
+            <p>Total Expenses: <span id="expense-total">0.00</span></p>
+            <p>Net Flow: <span id="net-flow">0.00</span></p>
+        </div>
+        
+        <div class="transactions">
+            <h2>Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .}}
+                    <tr>
+                        <td>{{.ID}}</td>
+                        <td>{{.Type}}</td>
+                        <td>{{.Amount}}</td>
+                        <td>{{.Description}}</td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
